@@ -9,6 +9,7 @@ import EventModal from './components/EventModal';
 import ParticleField from './components/ParticleField';
 import Footer from './components/Footer';
 import { GoogleOAuthProvider } from '@react-oauth/google';
+import { ToastContainer } from 'react-toastify';
 import './index.css';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -51,7 +52,7 @@ function App() {
         <div className="grid-pattern fixed inset-0 pointer-events-none z-0" />
         <ParticleField />
         <Navbar />
-        
+        <ToastContainer autoClose={3000} position='bottom-center'/>
         <main className="relative z-10 space-y-12 sm:space-y-16 lg:space-y-24">
           <Hero mousePosition={mousePosition} />
           <WhyThiran />

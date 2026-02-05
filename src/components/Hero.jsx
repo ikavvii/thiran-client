@@ -1,10 +1,19 @@
-import { useEffect, useRef } from 'react';
-import { motion, useScroll, useTransform } from 'framer-motion';
-import gsap from 'gsap';
-import { ArrowRight, Play, Users, Calendar, Trophy, Link2, Smartphone, MessageCircle } from 'lucide-react';
-import { Button } from './ui/Button';
-import { Badge } from './ui/Badge';
-import { cn } from '../lib/utils';
+import { useEffect, useRef } from "react";
+import { motion, useScroll, useTransform } from "framer-motion";
+import gsap from "gsap";
+import {
+  ArrowRight,
+  Play,
+  Users,
+  Calendar,
+  Trophy,
+  Link2,
+  Smartphone,
+  MessageCircle,
+} from "lucide-react";
+import { Button } from "./ui/Button";
+import { Badge } from "./ui/Badge";
+import { cn } from "../lib/utils";
 
 const Hero = ({ mousePosition }) => {
   const heroRef = useRef(null);
@@ -19,7 +28,7 @@ const Hero = ({ mousePosition }) => {
         x: (mousePosition.x - 50) * 3,
         y: (mousePosition.y - 50) * 3,
         duration: 1,
-        ease: 'power2.out',
+        ease: "power2.out",
       });
     }
   }, [mousePosition]);
@@ -42,15 +51,15 @@ const Hero = ({ mousePosition }) => {
   };
 
   const stats = [
-    { icon: Calendar, value: 'March 15-17', label: '2026' },
-    { icon: Users, value: '1000+', label: 'Participants' },
-    { icon: Trophy, value: '₹1L+', label: 'Prize Pool' },
+    { icon: Calendar, value: "March 15-17", label: "2026" },
+    { icon: Users, value: "1000+", label: "Participants" },
+    { icon: Trophy, value: "₹1L+", label: "Prize Pool" },
   ];
 
   const socialIcons = [
-    { icon: Link2, label: 'Website' },
-    { icon: Smartphone, label: 'App' },
-    { icon: MessageCircle, label: 'Chat' },
+    { icon: Link2, label: "Website" },
+    { icon: Smartphone, label: "App" },
+    { icon: MessageCircle, label: "Chat" },
   ];
 
   return (
@@ -64,12 +73,13 @@ const Hero = ({ mousePosition }) => {
         ref={glowRef}
         className="absolute w-[500px] sm:w-[700px] lg:w-[900px] aspect-square rounded-full pointer-events-none opacity-60"
         style={{
-          background: 'radial-gradient(circle, rgba(168,85,247,0.2) 0%, rgba(236,72,153,0.1) 40%, transparent 70%)',
-          filter: 'blur(80px)',
+          background:
+            "radial-gradient(circle, rgba(168,85,247,0.2) 0%, rgba(236,72,153,0.1) 40%, transparent 70%)",
+          filter: "blur(80px)",
           y,
-          left: '50%',
-          top: '50%',
-          transform: 'translate(-50%, -50%)',
+          left: "50%",
+          top: "50%",
+          transform: "translate(-50%, -50%)",
         }}
       />
 
@@ -80,7 +90,7 @@ const Hero = ({ mousePosition }) => {
       >
         <motion.span
           className="text-[30vw] sm:text-[25vw] lg:text-[20vw] font-display font-black text-transparent opacity-30"
-          style={{ WebkitTextStroke: '1px rgba(168,85,247,0.2)' }}
+          style={{ WebkitTextStroke: "1px rgba(168,85,247,0.2)" }}
           initial={{ x: 100, opacity: 0 }}
           animate={{ x: 0, opacity: 0.3 }}
           transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
@@ -97,7 +107,10 @@ const Hero = ({ mousePosition }) => {
         transition={{ delay: 0.8, duration: 0.6 }}
       >
         <div className="w-px h-16 bg-gradient-to-b from-transparent via-purple-500/50 to-transparent" />
-        <span className="text-[10px] font-medium tracking-[0.2em] text-gray-500 uppercase" style={{ writingMode: 'vertical-rl', transform: 'rotate(180deg)' }}>
+        <span
+          className="text-[10px] font-medium tracking-[0.2em] text-gray-500 uppercase"
+          style={{ writingMode: "vertical-rl", transform: "rotate(180deg)" }}
+        >
           The Future Is Now
         </span>
         <div className="w-px h-16 bg-gradient-to-b from-transparent via-pink-500/50 to-transparent" />
@@ -128,7 +141,10 @@ const Hero = ({ mousePosition }) => {
             animate="visible"
           >
             {/* Badge */}
-            <motion.div variants={itemVariants} className="flex justify-center lg:justify-start">
+            <motion.div
+              variants={itemVariants}
+              className="flex justify-center lg:justify-start"
+            >
               <Badge variant="gradient" className="mb-4 sm:mb-6">
                 <span className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse" />
                 PSG College of Technology
@@ -158,24 +174,33 @@ const Hero = ({ mousePosition }) => {
             </motion.div>
 
             {/* Description */}
+            {/* Description */}
             <motion.p
               variants={itemVariants}
-              className="mt-4 sm:mt-6 text-base sm:text-lg text-gray-400 max-w-lg mx-auto lg:mx-0 leading-relaxed"
+              className="block !my-4 px-6 sm:px-0 text-base sm:text-lg text-gray-400 max-w-xl mx-auto lg:mx-0 leading-relaxed border-l-2 border-purple-500/30 lg:pl-10"
             >
-              Experience the ultimate intra-college technical fest. Compete, innovate, and showcase your skills in a realm where technology meets creativity.
+              Experience the ultimate intra-college technical fest. Compete,
+              innovate, and showcase your skills in a realm where technology
+              meets creativity.
             </motion.p>
 
             {/* CTA Buttons */}
-            <motion.div variants={itemVariants} className="flex flex-col sm:flex-row gap-3 sm:gap-4 mt-6 sm:mt-8 justify-center lg:justify-start">
-              <Button variant="primary" size="lg" className="group">
-                <span>Explore Now</span>
-                <span className="w-6 h-6 rounded-full bg-white/20 flex items-center justify-center ml-1">
-                  <ArrowRight size={14} className="group-hover:translate-x-0.5 transition-transform" />
+            <motion.div
+              variants={itemVariants}
+              className="flex flex-col sm:flex-row gap-3 sm:gap-4 mt-6 sm:mt-8 justify-center lg:justify-start"
+            >
+              <Button variant="primary" size="lg" className="">
+                <span className="!px-2">Explore Now</span>
+                <span className="w-6 h-6 rounded-full bg-white/20 flex items-center justify-center">
+                  <ArrowRight
+                    size={14}
+                    className="group-hover:translate-x-0.5 transition-transform"
+                  />
                 </span>
               </Button>
 
-              <Button variant="outline" size="lg" className="group">
-                <span className="w-7 h-7 rounded-full bg-gradient-to-r from-purple-500 to-pink-500 flex items-center justify-center">
+              <Button variant="outline" size="lg" className="!px-2 group">
+                <span className="w-7 h-7  rounded-full bg-gradient-to-r from-purple-500 to-pink-500 flex items-center justify-center">
                   <Play size={12} fill="white" className="ml-0.5" />
                 </span>
                 <span>Watch Demo</span>
@@ -185,7 +210,7 @@ const Hero = ({ mousePosition }) => {
             {/* Stats */}
             <motion.div
               variants={itemVariants}
-              className="flex flex-wrap items-center justify-center lg:justify-start gap-4 sm:gap-6 mt-8 sm:mt-10"
+              className="flex flex-wrap items-center justify-center lg:justify-start gap-4 sm:gap-6 !mt-3 sm:mt-10"
             >
               {stats.map((stat, index) => (
                 <div key={index} className="flex items-center gap-2.5 sm:gap-3">
@@ -193,8 +218,12 @@ const Hero = ({ mousePosition }) => {
                     <stat.icon size={16} className="text-purple-400" />
                   </div>
                   <div className="text-left">
-                    <div className="font-semibold text-sm sm:text-base text-white">{stat.value}</div>
-                    <div className="text-[10px] sm:text-xs text-gray-500">{stat.label}</div>
+                    <div className="font-semibold text-sm sm:text-base text-white">
+                      {stat.value}
+                    </div>
+                    <div className="text-[10px] sm:text-xs text-gray-500">
+                      {stat.label}
+                    </div>
                   </div>
                 </div>
               ))}
@@ -212,16 +241,24 @@ const Hero = ({ mousePosition }) => {
               {/* Main glowing orb background */}
               <motion.div
                 className="absolute inset-[15%] sm:inset-[10%] rounded-full bg-gradient-to-br from-purple-500/20 via-pink-500/10 to-cyan-500/20"
-                style={{ filter: 'blur(60px)' }}
+                style={{ filter: "blur(60px)" }}
                 animate={{ scale: [1, 1.1, 1], opacity: [0.4, 0.7, 0.4] }}
-                transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut' }}
+                transition={{
+                  duration: 5,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                }}
               />
 
               {/* Central VR element */}
               <motion.div
                 className="absolute inset-0 flex items-center justify-center"
                 animate={{ y: [0, -12, 0] }}
-                transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut' }}
+                transition={{
+                  duration: 6,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                }}
               >
                 <div className="w-40 h-40 sm:w-52 sm:h-52 lg:w-64 lg:h-64 rounded-3xl bg-gradient-to-br from-purple-500/10 to-pink-500/10 border border-white/10 backdrop-blur-sm flex items-center justify-center relative overflow-hidden shadow-2xl shadow-purple-500/20">
                   <span className="text-6xl sm:text-7xl lg:text-8xl">🥽</span>
@@ -236,7 +273,7 @@ const Hero = ({ mousePosition }) => {
                 animate={{ opacity: 1, x: 0, y: [0, -8, 0] }}
                 transition={{
                   opacity: { delay: 0.6, duration: 0.5 },
-                  y: { duration: 5, repeat: Infinity, ease: 'easeInOut' },
+                  y: { duration: 5, repeat: Infinity, ease: "easeInOut" },
                 }}
               >
                 <div className="flex items-center gap-2.5 sm:gap-3">
@@ -244,8 +281,12 @@ const Hero = ({ mousePosition }) => {
                     🎮
                   </div>
                   <div>
-                    <div className="text-xs sm:text-sm font-semibold text-white">VR Experience</div>
-                    <div className="text-[10px] sm:text-xs text-gray-400">Immersive Tech</div>
+                    <div className="text-xs sm:text-sm font-semibold text-white">
+                      VR Experience
+                    </div>
+                    <div className="text-[10px] sm:text-xs text-gray-400">
+                      Immersive Tech
+                    </div>
                   </div>
                 </div>
               </motion.div>
@@ -257,12 +298,17 @@ const Hero = ({ mousePosition }) => {
                 animate={{ opacity: 1, x: 0, y: [0, 8, 0] }}
                 transition={{
                   opacity: { delay: 0.8, duration: 0.5 },
-                  y: { duration: 6, repeat: Infinity, ease: 'easeInOut', delay: 1 },
+                  y: {
+                    duration: 6,
+                    repeat: Infinity,
+                    ease: "easeInOut",
+                    delay: 1,
+                  },
                 }}
               >
                 <div className="flex items-center gap-2.5 sm:gap-3">
                   <div className="flex -space-x-1.5 sm:-space-x-2">
-                    {['😎', '🤓', '🧑‍💻'].map((emoji, i) => (
+                    {["😎", "🤓", "🧑‍💻"].map((emoji, i) => (
                       <div
                         key={i}
                         className="w-6 h-6 sm:w-8 sm:h-8 rounded-full bg-gradient-to-br from-gray-700 to-gray-800 flex items-center justify-center text-xs sm:text-sm border-2 border-[#0f0f18]"
@@ -272,8 +318,12 @@ const Hero = ({ mousePosition }) => {
                     ))}
                   </div>
                   <div>
-                    <div className="text-xs sm:text-sm font-semibold text-white">500+ Users</div>
-                    <div className="text-[10px] sm:text-xs text-gray-400">Already Registered</div>
+                    <div className="text-xs sm:text-sm font-semibold text-white">
+                      500+ Users
+                    </div>
+                    <div className="text-[10px] sm:text-xs text-gray-400">
+                      Already Registered
+                    </div>
                   </div>
                 </div>
               </motion.div>
@@ -285,12 +335,21 @@ const Hero = ({ mousePosition }) => {
                 animate={{ opacity: 1, x: 0, y: [0, -6, 0] }}
                 transition={{
                   opacity: { delay: 1, duration: 0.5 },
-                  y: { duration: 7, repeat: Infinity, ease: 'easeInOut', delay: 2 },
+                  y: {
+                    duration: 7,
+                    repeat: Infinity,
+                    ease: "easeInOut",
+                    delay: 2,
+                  },
                 }}
               >
                 <div className="text-center">
-                  <div className="text-xl sm:text-2xl font-bold bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">20+</div>
-                  <div className="text-[10px] sm:text-xs text-gray-400">Events</div>
+                  <div className="text-xl sm:text-2xl font-bold bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
+                    20+
+                  </div>
+                  <div className="text-[10px] sm:text-xs text-gray-400">
+                    Events
+                  </div>
                 </div>
               </motion.div>
 
@@ -298,12 +357,12 @@ const Hero = ({ mousePosition }) => {
               <motion.div
                 className="absolute inset-[12%] sm:inset-[8%] border border-purple-500/10 rounded-full pointer-events-none"
                 animate={{ rotate: 360 }}
-                transition={{ duration: 40, repeat: Infinity, ease: 'linear' }}
+                transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
               />
               <motion.div
                 className="absolute inset-[20%] sm:inset-[16%] border border-pink-500/10 rounded-full pointer-events-none"
                 animate={{ rotate: -360 }}
-                transition={{ duration: 50, repeat: Infinity, ease: 'linear' }}
+                transition={{ duration: 50, repeat: Infinity, ease: "linear" }}
               />
             </div>
           </motion.div>

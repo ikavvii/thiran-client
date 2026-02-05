@@ -3,6 +3,9 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, Sparkles, ChevronRight } from 'lucide-react';
 import { Button } from './ui/Button';
 import { cn } from '../lib/utils';
+import Modal from './Modal';
+import RegisterForm from "./RegisterForm";
+
 
 const navLinks = [
   { name: 'Home', href: '#home' },
@@ -15,6 +18,7 @@ const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [activeLink, setActiveLink] = useState('Home');
+  const [openModal, setOpenModal] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -103,11 +107,15 @@ const Navbar = () => {
 
             {/* CTA Button - Desktop */}
             <div className="hidden md:block">
-              <Button variant="primary" size="md" className="group">
+              <Button variant="primary" size="md" onClick={()=>setOpenModal(true)} className="group">
                 <span>Register Now</span>
                 <ChevronRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5" />
               </Button>
             </div>
+
+            <Modal isOpen={openModal} onClose={()=>setOpenModal(false)} >
+              <RegisterForm/>
+            </Modal>
 
             {/* Mobile Menu Button */}
             <motion.button
